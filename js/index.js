@@ -35,6 +35,7 @@ navLinks[3].addEventListener("keyup", function(event) {
 let funBusLogo = document.querySelector("h1")
 
 funBusLogo.addEventListener("mouseover", function(event) {
+	event.stopPropagation()
 	event.target.style.color = "red"
 })
 
@@ -68,7 +69,15 @@ let buttonSelector = document.querySelectorAll(".btn")
 buttonSelector[0].addEventListener("mouseenter", function(event){
 	event.target.style.color = "red"
 })
-
+buttonSelector[1].addEventListener("click", function(event){
+	event.stopPropagation()
+	event.target.style.color = "red"
+})
+buttonSelector[2].addEventListener("click", function(event){
+	
+	
+	event.preventDefault()
+})
 let bodySelector = document.querySelector("body")
 
 bodySelector.addEventListener("click", function(event){
@@ -77,4 +86,7 @@ bodySelector.addEventListener("click", function(event){
 
 let mainNavigationSelector = document.querySelector(".main-navigation")
 
-mainNavigationSelector.addEventListener("click")
+mainNavigationSelector.addEventListener("click", function(event){
+	event.stopPropagation()
+	console.log("Click click click. Is that all you do?")
+})
